@@ -1,0 +1,83 @@
+{
+    "pages": {
+        "home": {
+            "app_bar_items": {
+                "drawer": {
+                    "dark_mode": "Dark Mode",
+                    "enabled": "Enabled",
+                    "disabled": "Disabled",
+                    "language": "Language"
+                },
+                "search": {
+                    "search_hint": "Search address or city",
+                    "no_results": "No results"
+                }
+            },
+            "bottom_navbar_items": {
+                "map": "Map",
+                "charge": "Charge",
+                "route": "Route",
+                "favorites": "Favorites",
+                "settings": "Settings"
+            }
+        },
+        "login": {
+            "email_hint": "Email",
+            "email_helper_text": "Enter your email address",
+            "password_hint": "Password",
+            "password_helper_text": "Enter your password",
+            "forgot_password": "Forgot Password?",
+            "register_button": "Register",
+            "login_button": "Login",
+            "logging_in": "Logging in...",
+            "email_validation": {
+                "empty": "Please enter your email address",
+                "invalid": "Invalid email address"
+            },
+            "password_validation": {
+                "empty": "Please enter your password",
+                "short": "Password must be at least 8 characters long"
+            },
+            "login_success": "Login successful",
+            "login_failed": "Login failed, please try again",
+            "error_occurred": "An error occurred, please try again later"
+        },
+        "register": {
+            "title": "Register",
+            "phone_label_text": "Phone Number",
+            "name_label_text": "First Name",
+            "lastname_label_text": "Last Name",
+            "email_label_text": "Email",
+            "password_label_text": "Password",
+            "password_short_error": "Minimum 8 characters with uppercase, lowercase, number, and special character",
+            "confirm_password_label_text": "Re-enter your password",
+            "terms_and_conditions": {
+                "terms_acceptance": "I have read and accept the @terms_link and @privacy_link",
+                "terms_link_text": "Terms and Conditions",
+                "privacy_link_text": "Privacy Policy"
+            },
+            "already_have_account": "Already have an account? ",
+            "login": "Login",
+            "register_button": "Register",
+            "validate_name": "Please enter your first name",
+            "validate_lastname": "Please enter your last name",
+            "validate_email": {
+                "empty": "Please enter your email address",
+                "invalid": "Please enter a valid email address"
+            },
+            "validate_password": {
+                "empty": "Please enter your password",
+                "short": "Password must be at least 8 characters long",
+                "no_uppercase": "Password must contain at least one uppercase letter",
+                "no_lowercase": "Password must contain at least one lowercase letter",
+                "no_number": "Password must contain at least one number",
+                "no_special_char": "Password must contain at least one special character",
+                "not_match": "Passwords do not match"
+            },
+            "accept_terms_and_conditions": "You must accept the Terms and Conditions and Privacy Policy",
+            "register_success": "Registration successful",
+            "register_failed": "Registration failed, please try again",
+            "error_occurred": "An error occurred, please try again later"
+        }
+    }
+}
