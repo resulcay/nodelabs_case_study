@@ -22,6 +22,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_inner_shadow: ^0.0.1
+  flutter_native_splash: ^2.4.4
   flutter_secure_storage: ^9.2.4
   font_awesome_flutter: ^10.8.0
   image_picker: ^1.1.2
@@ -70,3 +71,6 @@ targets:
         options:
           path: .env.custom
           override: true 
+
+flutter_native_splash:
+  background_image: "assets/images/splash.png"
