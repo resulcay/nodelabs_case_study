@@ -10,7 +10,11 @@ final class LightTheme implements ThemeManager {
         brightness: isDarkMode ? Brightness.dark : Brightness.light,
         fontFamily: TextConstants.mainFontFamily,
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(centerTitle: true),
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        ),
+        scaffoldBackgroundColor: isDarkMode ? Colors.black : Colors.white,
       );
 
   @override
@@ -26,6 +30,11 @@ final class LightTheme implements ThemeManager {
             fontFamily: TextConstants.mainFontFamily,
             fontWeight: FontWeight.w400,
             fontSize: 13,
+          ),
+          labelMedium: baseLightTheme.textTheme.labelMedium?.copyWith(
+            fontFamily: TextConstants.mainFontFamily,
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
           ),
         ),
       );

@@ -59,6 +59,38 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [MovieScrollView]
+class MovieScrollRoute extends PageRouteInfo<void> {
+  const MovieScrollRoute({List<PageRouteInfo>? children})
+      : super(MovieScrollRoute.name, initialChildren: children);
+
+  static const String name = 'MovieScrollRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MovieScrollView();
+    },
+  );
+}
+
+/// generated route for
+/// [ProfileDetailsView]
+class ProfileDetailsRoute extends PageRouteInfo<void> {
+  const ProfileDetailsRoute({List<PageRouteInfo>? children})
+      : super(ProfileDetailsRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileDetailsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ProfileDetailsView();
+    },
+  );
+}
+
+/// generated route for
 /// [RegisterView]
 class RegisterRoute extends PageRouteInfo<void> {
   const RegisterRoute({List<PageRouteInfo>? children})

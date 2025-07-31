@@ -8,7 +8,9 @@ import 'package:nodelabs_case_study/product/language/language_manager.dart';
 import 'package:nodelabs_case_study/product/network/base_config/dio_manager.dart';
 import 'package:nodelabs_case_study/product/theme/dark_theme.dart';
 import 'package:nodelabs_case_study/product/theme/light_theme.dart';
+import 'package:nodelabs_case_study/view_model/favorite_movies/favorite_movies_view_model.dart';
 import 'package:nodelabs_case_study/view_model/home/home_view_model.dart';
+import 'package:nodelabs_case_study/view_model/movie_scroll/movie_scroll_view_model.dart';
 import 'package:nodelabs_case_study/view_model/theme/theme_state.dart';
 import 'package:nodelabs_case_study/view_model/theme/theme_view_model.dart';
 import 'package:nodelabs_case_study/view_model/user_credentials/user_credential_view_model.dart';
@@ -21,6 +23,8 @@ Future<void> main() async {
         BlocProvider(create: (_) => ThemeViewModel()),
         BlocProvider(create: (_) => HomeViewModel()),
         BlocProvider(create: (_) => UserCredentialViewModel()),
+        BlocProvider(create: (_) => MovieScrollViewModel()),
+        BlocProvider(create: (_) => FavoriteMoviesViewModel()),
       ],
       child: LanguageManager(child: const Root()),
     ),

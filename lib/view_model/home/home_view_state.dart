@@ -1,16 +1,11 @@
 final class HomeViewState {
-  const HomeViewState({
-    required this.isLoading,
-    required this.isEmpty,
-  });
+  const HomeViewState({required this.currentPage});
 
-  final bool isLoading;
-  final bool isEmpty;
+  final int currentPage;
 
-  HomeViewState copyWith({bool? isLoading, bool? isEmpty}) {
+  HomeViewState copyWith({int? currentPage}) {
     return HomeViewState(
-      isLoading: isLoading ?? this.isLoading,
-      isEmpty: isEmpty ?? this.isEmpty,
+      currentPage: currentPage ?? this.currentPage,
     );
   }
 }

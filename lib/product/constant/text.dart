@@ -4,7 +4,14 @@ class TextConstants {
   static const termsUrl = 'https://example.com/terms';
   static const privacyPolicyUrl = 'https://example.com/privacy';
   static const supportUrl = 'https://example.com/support';
+
+  // User
   static const registerUser = '/user/register';
   static const loginUser = '/user/login';
   static const uploadPhoto = '/user/upload_photo';
+
+  // Movie
+  static const getMovies = '/movie/list';
+  static const getFavoriteMovies = '/movie/favorites';
+  static const toggleFavoriteMovie = '/movie/favorite';
 }

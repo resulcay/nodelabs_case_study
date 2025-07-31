@@ -3,6 +3,7 @@ class BaseResponse<T> {
     required this.response,
     this.data,
   });
+
   factory BaseResponse.fromJson(
     Map<String, dynamic> json,
     T Function(Map<String, dynamic>)? fromJsonT,
@@ -15,6 +16,20 @@ class BaseResponse<T> {
           : null,
     );
   }
+
+  factory BaseResponse.fromJsonWithArrayData(
+    Map<String, dynamic> json,
+    T Function(List<dynamic>)? fromJsonT,
+  ) {
+    return BaseResponse<T>(
+      response:
+          ResponseStatus.fromJson(json['response'] as Map<String, dynamic>),
+      data: json['data'] != null && fromJsonT != null
+          ? fromJsonT(json['data'] as List<dynamic>)
+          : null,
+    );
+  }
+
   final ResponseStatus response;
   final T? data;
 
