@@ -1,33 +1,29 @@
 {
     "pages": {
         "home": {
-            "app_bar_items": {
-                "drawer": {
-                    "dark_mode": "Karanlık Mod",
-                    "enabled": "Açık",
-                    "disabled": "Kapalı",
-                    "language": "Dil"
-                },
-                "search": {
-                    "search_hint": "Adres veya şehir ara...",
-                    "no_results": "Sonuç yok"
-                }
+            "drawer": {
+                "dark_mode": "Karanlık Mod",
+                "enabled": "Açık",
+                "disabled": "Kapalı",
+                "language": "Dil"
             },
             "bottom_navbar_items": {
-                "map": "Harita",
-                "charge": "Şarj Et",
-                "route": "Rota",
-                "favorites": "Favoriler",
-                "settings": "Ayarlar"
-            }
+                "home": "Ana Sayfa",
+                "profile": "Profil"
+            },
+            "more": "Daha Fazla",
+            "less": "Daha Az",
+            "toggle_favorite_failed": "Favori eklenemedi, lütfen daha sonra tekrar deneyin"
         },
         "login": {
+            "hi": "Merhabalar",
             "email_hint": "E-posta",
             "email_helper_text": "E-posta adresinizi girin",
             "password_hint": "Şifre",
             "password_helper_text": "Şifrenizi girin",
-            "forgot_password": "Şifreni mi Unuttun?",
-            "register_button": "Kaydol",
+            "forgot_password": "Şifremi Unuttum",
+            "not_have_account": "Bir hesabın yok mu? ",
+            "register_button": "Kayıt Ol",
             "login_button": "Giriş Yap",
             "logging_in": "Giriş Yapılıyor...",
             "email_validation": {
@@ -43,22 +39,15 @@
             "error_occurred": "Bir hata oluştu, lütfen daha sonra tekrar deneyin"
         },
         "register": {
-            "title": "Kayıt Ol",
-            "phone_label_text": "Telefon Numarası",
-            "name_label_text": "Ad",
-            "lastname_label_text": "Soyad",
+            "hi": "Merhabalar",
+            "name_label_text": "Ad Soyad",
             "email_label_text": "E-posta",
             "password_label_text": "Şifre",
-            "password_short_error": "Büyük harf, küçük harf, sayı ve özel karakter içeren minimum 8 karakter",
-            "confirm_password_label_text": "Şifrenizi tekrar girin",
-            "terms_and_conditions": {
-                "terms_acceptance": "Kullanım Koşullarını @terms_link ve Gizlilik Politikasını @privacy_link okudum ve kabul ediyorum",
-                "terms_link_text": "Kullanım Koşullarını",
-                "privacy_link_text": "Gizlilik Politikasını"
-            },
-            "already_have_account": "Zaten hesabınız var mı? ",
-            "login": "Giriş Yap",
+            "confirm_password_label_text": "Şifre tekrar",
+            "already_have_account": "Zaten bir hesabın var mı? ",
+            "login": "Giriş Yap!",
             "register_button": "Kayıt Ol",
+            "registering": "Kayıt Olunuyor...",
             "validate_name": "Lütfen adınızı girin",
             "validate_lastname": "Lütfen soyadınızı girin",
             "validate_email": {
@@ -68,26 +57,40 @@
             "validate_password": {
                 "empty": "Lütfen şifrenizi girin",
                 "short": "Şifre en az 8 karakter olmalıdır",
-                "no_uppercase": "Şifre en az bir büyük harf içermelidir",
-                "no_lowercase": "Şifre en az bir küçük harf içermelidir",
-                "no_number": "Şifre en az bir rakam içermelidir",
-                "no_special_char": "Şifre en az bir özel karakter içermelidir",
                 "not_match": "Şifreler eşleşmiyor"
             },
-            "accept_terms_and_conditions": "Kullanım Koşullarını ve Gizlilik Politikasını kabul etmelisiniz",
             "register_success": "Kayıt başarılı",
             "register_failed": "Kayıt başarısız, lütfen tekrar deneyin",
             "error_occurred": "Bir hata oluştu, lütfen daha sonra tekrar deneyin"
         },
-        "splash": {
-            "unknown_version": "Bilinmeyen Sürüm",
-            "connection_issue_dialog": {
-                "title": "Bağlantı Sorunu",
-                "message": "Sunucudan en son veriler alınamadı. Bu geçici bir sorun olabilir.",
-                "check": "Lütfen internet bağlantınızı kontrol edin.",
-                "try_in_a_few": "Birkaç dakika içinde tekrar deneyin.",
-                "retry": "Tekrar Dene"
-            }
+        "profile": {
+            "title": "Profil Detayı",
+            "limited_offer_text": "Sınırlı Teklif",
+            "add_photo": "Fotoğraf Ekle",
+            "favorite_movies": "Beğendiğim Filmler"
+        },
+        "add_profile_photo": {
+            "title": "Profil Detayı",
+            "add_photo": "Fotoğraflarınızı ekleyin",
+            "continue": "Devam Et",
+            "loading": "Yükleniyor...",
+            "success": "Fotoğraf başarıyla eklendi",
+            "error_occurred": "Bir hata oluştu, lütfen daha sonra tekrar deneyin"
+        },
+        "limited_offer": {
+            "title": "Sınırlı Teklif",
+            "description": "Jeton paketin’ni seçerek bonus kazanın ve yeni bölümlerin kilidini açın!",
+            "bonus": "Alacağınız Bonuslar",
+            "bonusses": {
+                "premium": "Premium Hesap",
+                "matching": "Daha Fazla Eşleşme",
+                "visibility": "Öne Çıkarma",
+                "like": "Daha Fazla Beğeni"
+            },
+            "select_package": "Kilidi açmak için bir jeton paketi seçin",
+            "token": "Jeton",
+            "per_week": "Başına haftalık",
+            "see_all": "Tüm Jetonları Gör"
         }
     }
 }

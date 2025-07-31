@@ -13,8 +13,16 @@ final class LightTheme implements ThemeManager {
         appBarTheme: AppBarTheme(
           centerTitle: true,
           backgroundColor: isDarkMode ? Colors.black : Colors.white,
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.transparent,
         ),
         scaffoldBackgroundColor: isDarkMode ? Colors.black : Colors.white,
+        navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        ),
       );
 
   @override

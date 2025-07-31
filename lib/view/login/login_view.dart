@@ -38,7 +38,7 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                       Column(
                         children: [
                           Text(
-                            'Merhabalar',
+                            LocaleKeys.pages_login_hi.tr(),
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
                           const SizedBox(height: 10),
@@ -51,7 +51,7 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                           CustomTextFormField(
                             controller: emailController,
                             keyboardType: TextInputType.emailAddress,
-                            labelText: 'E-Posta',
+                            labelText: LocaleKeys.pages_login_email_hint.tr(),
                             hintText:
                                 LocaleKeys.pages_login_email_helper_text.tr(),
                             obscureText: false,
@@ -62,7 +62,8 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                           CustomTextFormField(
                             controller: passwordController,
                             keyboardType: TextInputType.visiblePassword,
-                            labelText: 'Şifre',
+                            labelText:
+                                LocaleKeys.pages_login_password_hint.tr(),
                             hintText: LocaleKeys
                                 .pages_login_password_helper_text
                                 .tr(),
@@ -90,8 +91,8 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                           PrimaryButton(
                             onPressed: login,
                             isLoading: isLoading,
-                            text: 'Login',
-                            loadingText: 'Logging In...',
+                            text: LocaleKeys.pages_login_login_button.tr(),
+                            loadingText: LocaleKeys.pages_login_logging_in.tr(),
                           ),
                           const SizedBox(height: 30),
                           const ExternelAuthButtonRow(),
@@ -100,7 +101,7 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Bir hesabın yok mu? ',
+                                LocaleKeys.pages_login_not_have_account.tr(),
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium
@@ -114,7 +115,7 @@ class _LoginViewState extends State<LoginView> with LoginViewMixin {
                                 onPressed: () =>
                                     context.router.push(const RegisterRoute()),
                                 child: Text(
-                                  'Kayıt Ol',
+                                  LocaleKeys.pages_login_register_button.tr(),
                                   style:
                                       Theme.of(context).textTheme.labelMedium,
                                 ),

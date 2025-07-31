@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nodelabs_case_study/product/constant/color.dart';
 import 'package:nodelabs_case_study/product/constant/locales.dart';
 import 'package:nodelabs_case_study/product/global/global_declaration.dart';
+import 'package:nodelabs_case_study/product/language/locale_keys.g.dart';
 import 'package:nodelabs_case_study/product/network/base_config/dio_manager.dart';
 import 'package:nodelabs_case_study/view_model/theme/theme_view_model.dart';
 
@@ -294,13 +295,15 @@ class _HomeViewDrawerState extends State<HomeViewDrawer>
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Dark Mode',
+                              LocaleKeys.pages_home_drawer_dark_mode,
                               style: Theme.of(context).textTheme.titleSmall,
                             ).tr(),
                             AnimatedSwitcher(
                               duration: const Duration(milliseconds: 200),
                               child: Text(
-                                isDark ? 'drawer enabled' : 'drawer disabled',
+                                isDark
+                                    ? LocaleKeys.pages_home_drawer_enabled
+                                    : LocaleKeys.pages_home_drawer_disabled,
                                 key: ValueKey(isDark),
                                 style: Theme.of(context)
                                     .textTheme
@@ -413,7 +416,7 @@ class _HomeViewDrawerState extends State<HomeViewDrawer>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Test',
+                                LocaleKeys.pages_home_drawer_language,
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelSmall

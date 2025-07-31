@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:nodelabs_case_study/product/common/externel_auth_button_row.dart
 import 'package:nodelabs_case_study/product/common/primary_button.dart';
 import 'package:nodelabs_case_study/product/constant/text.dart';
 import 'package:nodelabs_case_study/product/extension/size_extension.dart';
+import 'package:nodelabs_case_study/product/language/locale_keys.g.dart';
 import 'package:nodelabs_case_study/product/navigation/route_manager.dart';
 import 'package:nodelabs_case_study/view/register/register_view_mixin.dart';
 import 'package:nodelabs_case_study/view_model/theme/theme_state.dart';
@@ -39,7 +41,7 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Merhabalar',
+                      LocaleKeys.pages_register_hi.tr(),
                       style: Theme.of(context).textTheme.headlineLarge,
                     ),
                     const SizedBox(height: 10),
@@ -52,8 +54,8 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                     CustomTextFormField(
                       controller: nameController,
                       keyboardType: TextInputType.text,
-                      labelText: 'Ad Soyad',
-                      hintText: 'Ad Soyad',
+                      labelText: LocaleKeys.pages_register_name_label_text.tr(),
+                      hintText: LocaleKeys.pages_register_name_label_text.tr(),
                       obscureText: false,
                       validator: validateName,
                       prefixIconPath: 'assets/images/add-user.png',
@@ -62,8 +64,9 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                     CustomTextFormField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
-                      labelText: 'E-posta',
-                      hintText: 'E-posta',
+                      labelText:
+                          LocaleKeys.pages_register_email_label_text.tr(),
+                      hintText: LocaleKeys.pages_register_email_label_text.tr(),
                       obscureText: false,
                       validator: validateEmail,
                       prefixIconPath: 'assets/images/message.png',
@@ -72,8 +75,10 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                     CustomTextFormField(
                       controller: passwordController,
                       keyboardType: TextInputType.visiblePassword,
-                      labelText: 'Şifre',
-                      hintText: 'Şifre',
+                      labelText:
+                          LocaleKeys.pages_register_password_label_text.tr(),
+                      hintText:
+                          LocaleKeys.pages_register_password_label_text.tr(),
                       obscureText: obscurePassword,
                       prefixIconPath: 'assets/images/unlock.png',
                       validator: validatePassword,
@@ -82,8 +87,12 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                     CustomTextFormField(
                       controller: confirmPasswordController,
                       keyboardType: TextInputType.visiblePassword,
-                      labelText: 'Şifre Tekrar',
-                      hintText: 'Şifre Tekrar',
+                      labelText: LocaleKeys
+                          .pages_register_confirm_password_label_text
+                          .tr(),
+                      hintText: LocaleKeys
+                          .pages_register_confirm_password_label_text
+                          .tr(),
                       obscureText: obscureConfirmPassword,
                       prefixIconPath: 'assets/images/unlock.png',
                       validator: doPasswordsMatch,
@@ -95,38 +104,84 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                           return RichText(
                             maxLines: 3,
                             text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: 'Kullanıcı sözleşmesini ',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
-                                  ),
-                                ),
-                                TextSpan(
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      launchUrl(
-                                        Uri.parse(TextConstants.termsUrl),
-                                      );
-                                    },
-                                  text: 'okudum ve kabul ediyorum. ',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    decoration: TextDecoration.underline,
-                                    color: state.isDark
-                                        ? Colors.white
-                                        : Colors.black,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '''Bu sözelşmeyi okuyarak devam ediniz lütfen.''',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
-                                  ),
-                                ),
-                              ],
+                              children: context.locale.languageCode == 'en'
+                                  ? [
+                                      TextSpan(
+                                        text: 'I have read and accept the ',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            launchUrl(
+                                              Uri.parse(TextConstants.termsUrl),
+                                            );
+                                          },
+                                        text: 'user agreement. ',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          decoration: TextDecoration.underline,
+                                          color: state.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text:
+                                            '''Please read this agreement before continuing.''',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                        ),
+                                      ),
+                                    ]
+                                  : [
+                                      // Non-English (default)
+                                      TextSpan(
+                                        text: 'Kullanıcı sözleşmesini ',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        recognizer: TapGestureRecognizer()
+                                          ..onTap = () {
+                                            launchUrl(
+                                              Uri.parse(
+                                                TextConstants.termsUrl,
+                                              ),
+                                            );
+                                          },
+                                        text: 'okudum ve kabul ediyorum. ',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          decoration: TextDecoration.underline,
+                                          color: state.isDark
+                                              ? Colors.white
+                                              : Colors.black,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text:
+                                            '''Bu sözleşmeyi okuyarak devam ediniz lütfen.''',
+                                        style: theme.textTheme.bodyMedium
+                                            ?.copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                        ),
+                                      ),
+                                    ],
                             ),
                           );
                         },
@@ -136,8 +191,8 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                       padding: const EdgeInsets.symmetric(vertical: 40),
                       child: PrimaryButton(
                         onPressed: register,
-                        text: 'Kayıt Ol',
-                        loadingText: 'Kayıt Olunuyor...',
+                        text: LocaleKeys.pages_register_register_button.tr(),
+                        loadingText: LocaleKeys.pages_register_registering.tr(),
                         isLoading: isLoading,
                       ),
                     ),
@@ -146,7 +201,7 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Zaten bir hesabın var mı?',
+                          LocaleKeys.pages_register_already_have_account.tr(),
                           style:
                               Theme.of(context).textTheme.bodyMedium?.copyWith(
                                     color: Theme.of(context)
@@ -158,7 +213,7 @@ class _RegisterViewState extends State<RegisterView> with RegisterViewMixin {
                           onPressed: () =>
                               context.router.push(const LoginRoute()),
                           child: Text(
-                            'Giriş Yap!',
+                            LocaleKeys.pages_register_login.tr(),
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                         ),

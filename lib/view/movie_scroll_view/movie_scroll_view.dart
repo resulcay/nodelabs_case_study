@@ -72,9 +72,7 @@ class _MovieScrollViewState extends State<MovieScrollView>
                         FontAwesomeIcons.barsStaggered,
                         color: Colors.white,
                       ),
-                      onPressed: () {
-                        Scaffold.of(parentContext).openDrawer();
-                      },
+                      onPressed: () => Scaffold.of(parentContext).openDrawer(),
                     ),
                   ),
                 ),

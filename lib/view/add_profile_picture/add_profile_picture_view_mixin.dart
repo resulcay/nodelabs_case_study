@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nodelabs_case_study/product/global/global_declaration.dart';
+import 'package:nodelabs_case_study/product/language/locale_keys.g.dart';
 import 'package:nodelabs_case_study/product/network/base_config/api_call_mixin.dart';
 import 'package:nodelabs_case_study/product/network/base_config/dio_manager.dart';
 import 'package:nodelabs_case_study/product/network/manager/auth_manager.dart';
@@ -49,7 +51,7 @@ mixin AddProfilePictureViewMixin on State<AddProfilePictureView> {
       final response = await authManager.uploadPhoto(formData: formData);
       if (response != null) {
         showCustomSnackBar(
-          'Image uploaded successfully.',
+          LocaleKeys.pages_add_profile_photo_success.tr(),
           type: SnackbarType.success,
         );
         await userCredentialViewModel.updateUserProfile(
@@ -62,7 +64,7 @@ mixin AddProfilePictureViewMixin on State<AddProfilePictureView> {
         }
       } else {
         showCustomSnackBar(
-          'An error occurred while uploading the image.',
+          LocaleKeys.pages_add_profile_photo_error_occurred.tr(),
           type: SnackbarType.error,
         );
       }
@@ -70,7 +72,7 @@ mixin AddProfilePictureViewMixin on State<AddProfilePictureView> {
       showCustomSnackBar(
         err.error.displayMessage.isNotEmpty
             ? err.error.displayMessage
-            : 'An error occurred while uploading the image.',
+            : LocaleKeys.pages_add_profile_photo_error_occurred.tr(),
         type: SnackbarType.error,
       );
     } on Exception catch (_) {

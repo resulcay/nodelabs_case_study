@@ -1,8 +1,10 @@
-import 'dart:ui';
+import 'dart:ui' as ui;
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nodelabs_case_study/product/constant/text.dart';
+import 'package:nodelabs_case_study/product/language/locale_keys.g.dart';
 import 'package:nodelabs_case_study/product/network/model/movie_list_response_model.dart';
 
 class MovieCard extends StatefulWidget {
@@ -105,7 +107,7 @@ class _MovieCardState extends State<MovieCard> {
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(30)),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                  filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: Container(
                     width: 50,
                     height: 70,
@@ -148,7 +150,7 @@ class _MovieCardState extends State<MovieCard> {
             ),
           ),
           maxLines: 2,
-          textDirection: TextDirection.ltr,
+          textDirection: ui.TextDirection.ltr,
         )..layout(maxWidth: constraints.maxWidth);
         final isOverflowing = textPainter.didExceedMaxLines;
 
@@ -177,9 +179,9 @@ class _MovieCardState extends State<MovieCard> {
                       fontSize: 14,
                     ),
                   ),
-                  const TextSpan(
-                    text: 'Daha az',
-                    style: TextStyle(
+                  TextSpan(
+                    text: LocaleKeys.pages_home_less.tr(),
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -213,10 +215,10 @@ class _MovieCardState extends State<MovieCard> {
   }
 
   Widget _buildTruncatedTextWithShowMore(String text, double maxWidth) {
-    const showMoreText = '... Show more';
-    const showMoreSpan = TextSpan(
+    final showMoreText = '... ${LocaleKeys.pages_home_more.tr()}';
+    final showMoreSpan = TextSpan(
       text: showMoreText,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 14,
         fontWeight: FontWeight.bold,
@@ -225,7 +227,7 @@ class _MovieCardState extends State<MovieCard> {
 
     final showMorePainter = TextPainter(
       text: showMoreSpan,
-      textDirection: TextDirection.ltr,
+      textDirection: ui.TextDirection.ltr,
     )..layout(maxWidth: maxWidth);
 
     var truncatedText = text;
@@ -240,7 +242,7 @@ class _MovieCardState extends State<MovieCard> {
           ),
         ),
         maxLines: 2,
-        textDirection: TextDirection.ltr,
+        textDirection: ui.TextDirection.ltr,
       )..layout(maxWidth: maxWidth - showMorePainter.width);
 
       if (!testPainter.didExceedMaxLines) {
@@ -270,7 +272,7 @@ class _MovieCardState extends State<MovieCard> {
             ),
           ),
           TextSpan(
-            text: 'Daha fazla',
+            text: LocaleKeys.pages_home_more.tr(),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Colors.white,
                   fontSize: 14,

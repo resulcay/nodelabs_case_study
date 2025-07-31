@@ -1,33 +1,29 @@
 {
     "pages": {
         "home": {
-            "app_bar_items": {
-                "drawer": {
-                    "dark_mode": "Dark Mode",
-                    "enabled": "Enabled",
-                    "disabled": "Disabled",
-                    "language": "Language"
-                },
-                "search": {
-                    "search_hint": "Search address or city",
-                    "no_results": "No results"
-                }
+            "drawer": {
+                "dark_mode": "Dark Mode",
+                "enabled": "On",
+                "disabled": "Off",
+                "language": "Language"
             },
             "bottom_navbar_items": {
-                "map": "Map",
-                "charge": "Charge",
-                "route": "Route",
-                "favorites": "Favorites",
-                "settings": "Settings"
-            }
+                "home": "Home",
+                "profile": "Profile"
+            },
+            "more": "More",
+            "less": "Less",
+            "toggle_favorite_failed": "Could not add to favorites, please try again later"
         },
         "login": {
+            "hi": "Hi there",
             "email_hint": "Email",
             "email_helper_text": "Enter your email address",
             "password_hint": "Password",
             "password_helper_text": "Enter your password",
             "forgot_password": "Forgot Password?",
-            "register_button": "Register",
+            "not_have_account": "Don't have an account? ",
+            "register_button": "Sign Up",
             "login_button": "Login",
             "logging_in": "Logging in...",
             "email_validation": {
@@ -36,30 +32,23 @@
             },
             "password_validation": {
                 "empty": "Please enter your password",
-                "short": "Password must be at least 8 characters long"
+                "short": "Password must be at least 8 characters"
             },
             "login_success": "Login successful",
             "login_failed": "Login failed, please try again",
             "error_occurred": "An error occurred, please try again later"
         },
         "register": {
-            "title": "Register",
-            "phone_label_text": "Phone Number",
-            "name_label_text": "First Name",
-            "lastname_label_text": "Last Name",
+            "hi": "Hi there",
+            "name_label_text": "Full Name",
             "email_label_text": "Email",
             "password_label_text": "Password",
-            "password_short_error": "Minimum 8 characters with uppercase, lowercase, number, and special character",
-            "confirm_password_label_text": "Re-enter your password",
-            "terms_and_conditions": {
-                "terms_acceptance": "I have read and accept the @terms_link and @privacy_link",
-                "terms_link_text": "Terms and Conditions",
-                "privacy_link_text": "Privacy Policy"
-            },
+            "confirm_password_label_text": "Confirm Password",
             "already_have_account": "Already have an account? ",
-            "login": "Login",
-            "register_button": "Register",
-            "validate_name": "Please enter your first name",
+            "login": "Login!",
+            "register_button": "Sign Up",
+            "registering": "Signing up...",
+            "validate_name": "Please enter your name",
             "validate_lastname": "Please enter your last name",
             "validate_email": {
                 "empty": "Please enter your email address",
@@ -67,17 +56,41 @@
             },
             "validate_password": {
                 "empty": "Please enter your password",
-                "short": "Password must be at least 8 characters long",
-                "no_uppercase": "Password must contain at least one uppercase letter",
-                "no_lowercase": "Password must contain at least one lowercase letter",
-                "no_number": "Password must contain at least one number",
-                "no_special_char": "Password must contain at least one special character",
+                "short": "Password must be at least 8 characters",
                 "not_match": "Passwords do not match"
             },
-            "accept_terms_and_conditions": "You must accept the Terms and Conditions and Privacy Policy",
             "register_success": "Registration successful",
             "register_failed": "Registration failed, please try again",
             "error_occurred": "An error occurred, please try again later"
+        },
+        "profile": {
+            "title": "Profile Detail",
+            "limited_offer_text": "Limited Offer",
+            "add_photo": "Add Photo",
+            "favorite_movies": "Favorite Movies"
+        },
+        "add_profile_photo": {
+            "title": "Profile Detail",
+            "add_photo": "Add your photos",
+            "continue": "Continue",
+            "loading": "Loading...",
+            "success": "Photo added successfully",
+            "error_occurred": "An error occurred, please try again later"
+        },
+        "limited_offer": {
+            "title": "Limited Offer",
+            "description": "Choose a token package to earn bonuses and unlock new content!",
+            "bonus": "Your Bonuses",
+            "bonusses": {
+                "premium": "Premium Account",
+                "matching": "More Matches",
+                "visibility": "Profile Boost",
+                "like": "More Likes"
+            },
+            "select_package": "Select a token package to unlock",
+            "token": "Tokens",
+            "per_week": "per week",
+            "see_all": "See All Tokens"
         }
     }
 }

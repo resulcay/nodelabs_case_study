@@ -10,7 +10,19 @@ final class DarkTheme implements ThemeManager {
         brightness: isDarkMode ? Brightness.dark : Brightness.light,
         fontFamily: TextConstants.mainFontFamily,
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(centerTitle: true),
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.transparent,
+        ),
+        scaffoldBackgroundColor: isDarkMode ? Colors.black : Colors.white,
+        navigationBarTheme: NavigationBarThemeData(
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        ),
       );
 
   @override
